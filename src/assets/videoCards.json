@@ -1,49 +1,49 @@
 [
   {
     "name": "MSI GeForce 210",
-    "graphic_processor": "GeForce 210",
+    "graphicProcessor": "GeForce 210",
     "frequency": "460",
     "vram": "1",
     "outputs": "DVI-I, HDMI, VGA (D-Sub)"
   },
   {
     "name": "GIGABYTE GeForce GT 730",
-    "graphic_processor": "GeForce GT 730",
+    "graphicProcessor": "GeForce GT 730",
     "frequency": "902",
     "vram": "2",
     "outputs": "DVI-I, HDMI, VGA (D-Sub)"
   },
   {
     "name": "PowerColor AMD Radeon 550",
-    "graphic_processor": "Radeon RX 550",
+    "graphicProcessor": "Radeon RX 550",
     "frequency": "1100",
     "vram": "2",
     "outputs": "DVI-D, HDMI"
   },
   {
     "name": "ZOTAC GeForce GT 1030 LP",
-    "graphic_processor": "GeForce GT 1030",
+    "graphicProcessor": "GeForce GT 1030",
     "frequency": "1227",
     "vram": "2",
     "outputs": "DVI-D, HDMI"
   },
   {
     "name": "GIGABYTE GeForce GTX 1650 D6 OC (rev. 2.0)",
-    "graphic_processor": "GeForce GTX 1650",
+    "graphicProcessor": "GeForce GTX 1650",
     "frequency": "1410",
     "vram": "4",
     "outputs": "DVI-D, DisplayPort, HDMI"
   },
   {
     "name": "Sapphire AMD Radeon RX 6600 PULSE",
-    "graphic_processor": "Radeon RX 6600",
+    "graphicProcessor": "Radeon RX 6600",
     "frequency": "1626",
     "vram": "8",
     "outputs": "3 x DisplayPort, HDMI"
   },
   {
     "name": "Palit GeForce RTX 3050 Dual",
-    "graphic_processor": "GeForce RTX 3050",
+    "graphicProcessor": "GeForce RTX 3050",
     "frequency": "1552",
     "vram": "8",
     "outputs": "DVI-D, DisplayPort, HDMI"

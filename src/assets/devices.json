@@ -1,43 +1,43 @@
 [
   {
     "name": "Aceline AGS-C04",
-    "device_type": "мышь",
-    "connection_type": "проводное",
+    "deviceType": "мышь",
+    "connectionType": "проводное",
     "weight": "100",
     "size": "65-39-123 мм"
   },
   {
     "name": "QUMO Office M14",
-    "device_type": "мышь",
-    "connection_type": "проводное",
+    "deviceType": "мышь",
+    "connectionType": "проводное",
     "weight": "70",
     "size": "72-36-114"
   },
   {
     "name": "Oklick 396M INSOMNIA",
-    "device_type": "мышь",
-    "connection_type": "проводное",
+    "deviceType": "мышь",
+    "connectionType": "проводное",
     "weight": "52",
     "size": "68-40-125"
   },
   {
     "name": "Dialog Gan-Kata KGK-15U",
-    "device_type": "клавиатура",
-    "connection_type": "проводное",
+    "deviceType": "клавиатура",
+    "connectionType": "проводное",
     "weight": "652",
     "size": "440-24-130"
   },
   {
     "name": "DEXP K-11001BU",
-    "device_type": "клавиатура",
-    "connection_type": "проводное",
+    "deviceType": "клавиатура",
+    "connectionType": "проводное",
     "weight": "655",
     "size": "485-27-208"
   },
   {
     "name": "KEYRON Grus",
-    "device_type": "клавиатура",
-    "connection_type": "беспроводное",
+    "deviceType": "клавиатура",
+    "connectionType": "беспроводное",
     "weight": "295",
     "size": "283-14-119"
   }

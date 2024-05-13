@@ -20,7 +20,7 @@ const appRoutes: Routes = [
   {path: '', component: MainComponent},
   {path: 'monitors', component: MonitorsComponent},
   {path: 'processors', component: ProcessorsComponent},
-  {path: 'video_cards', component: VideoCardsComponent},
+  {path: 'videoCards', component: VideoCardsComponent},
   {path: 'drives', component: DrivesComponent},
   {path: 'devices', component: DevicesComponent},
   {path: '**', component: NotFoundComponent}

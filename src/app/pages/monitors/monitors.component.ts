@@ -53,7 +53,7 @@ export class MonitorsComponent implements AfterViewInit, OnInit {
   }
 
   updateMonitor(id: number): void {
-    console.log(`Monitor ${this.monitors[id]} has been updated.`);
+    console.log(`Monitor ${this.monitors[id].name} has been updated.`);
     this.updatingId = id;
     this.form.setValue({
       "name": this.monitors[id].name,
@@ -66,7 +66,7 @@ export class MonitorsComponent implements AfterViewInit, OnInit {
   }
 
   deleteMonitor(id: number): void {
-    console.log(`Monitor ${this.monitors[id]} has been deleted.`);
+    console.log(`Monitor ${this.monitors[id].name} has been deleted.`);
     this.monitors.splice(id, 1);
     this.dataService.saveProduct('monitors', this.monitors);
   }
@@ -98,6 +98,6 @@ export class MonitorsComponent implements AfterViewInit, OnInit {
   }
 
   onNameChange(): void {
-    console.log(`Monitor ${this.monitors[-1]} has been added.`);
+    console.log(`Monitor ${this.monitors[-1].name} has been added.`);
   }
 }

@@ -41,20 +41,20 @@ export class DevicesComponent implements AfterViewInit, OnInit {
     this.updatingId = -1;
     this.form.setValue({
       "name": '',
-      "device_type": '',
-      "connection_type": '',
+      "deviceType": '',
+      "connectionType": '',
       "weight": '',
       "size": ''
     });
   }
 
   updateDevice(id: number): void {
-    console.log(`Device ${this.devices[id]} has been updated.`);
+    console.log(`Device ${this.devices[id].name} has been updated.`);
     this.updatingId = id;
     this.form.setValue({
       "name": this.devices[id].name,
-      "device_type": this.devices[id].deviceType,
-      "connection_type": this.devices[id].connectionType,
+      "deviceType": this.devices[id].deviceType,
+      "connectionType": this.devices[id].connectionType,
       "weight": this.devices[id].weight,
       "size": this.devices[id].size
     });
@@ -62,7 +62,7 @@ export class DevicesComponent implements AfterViewInit, OnInit {
   }
 
   deleteDevice(id: number): void {
-    console.log(`Device ${this.devices[id]} has been deleted.`);
+    console.log(`Device ${this.devices[id].name} has been deleted.`);
     this.devices.splice(id, 1);
     this.dataService.saveProduct('devices', this.devices);
   }
@@ -90,14 +90,14 @@ export class DevicesComponent implements AfterViewInit, OnInit {
   onSubmit(): void {
     const value = this.form.value;
     if (this.updatingId == -1)
-      this.devices.push(new Device(value.name, value.device_type, value.connection_type, value.weight, value.size));
+      this.devices.push(new Device(value.name, value.deviceType, value.connectionType, value.weight, value.size));
     else
-      this.devices[this.updatingId] = new Device(value.name, value.device_type, value.connection_type, value.weight, value.size);
+      this.devices[this.updatingId] = new Device(value.name, value.deviceType, value.connectionType, value.weight, value.size);
     this.clearForm();
     this.dataService.saveProduct('devices', this.devices);
   }
 
   onNameChange(): void {
-    console.log(`Device ${this.devices[-1]} has been addded.`);
+    console.log(`Device ${this.devices[-1].name} has been addded.`);
   }
 }

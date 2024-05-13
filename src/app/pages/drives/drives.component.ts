@@ -9,11 +9,11 @@ export class Drive {
   public cache: number = 0;
   public rotationSpeed: number = 0;
   public dataTransferRate: number = 0;
-  constructor (name: string, capacity: number, cache: number, rotation_speed: number, dataTransferRate: number) {
+  constructor (name: string, capacity: number, cache: number, rotationSpeed: number, dataTransferRate: number) {
     this.name = name;
     this.capacity = capacity;
     this.cache = cache;
-    this.rotationSpeed = rotation_speed;
+    this.rotationSpeed = rotationSpeed;
     this.dataTransferRate = dataTransferRate;
   }
 }
@@ -43,26 +43,26 @@ export class DrivesComponent implements AfterViewInit, OnInit {
       "name": '',
       "capacity": '',
       "cache": '',
-      "rotation_speed": '',
-      "data_transfer_rate": ''
+      "rotationSpeed": '',
+      "dataTransferRate": ''
     });
   }
 
   updateDrive(id: number): void {
-    console.log(`Drive ${this.drives[id]} has been updated.`);
+    console.log(`Drive ${this.drives[id].name} has been updated.`);
     this.updatingId = id;
     this.form.setValue({
       "name": this.drives[id].name,
       "capacity": this.drives[id].capacity,
       "cache": this.drives[id].cache,
-      "rotation_speed": this.drives[id].rotationSpeed,
-      "data_transfer_rate": this.drives[id].dataTransferRate
+      "rotationSpeed": this.drives[id].rotationSpeed,
+      "dataTransferRate": this.drives[id].dataTransferRate
     });
     this.dataService.saveProduct('drives', this.drives);
   }
 
   deleteDrive(id: number): void {
-    console.log(`Drive ${this.drives[id]} has been deleted.`);
+    console.log(`Drive ${this.drives[id].name} has been deleted.`);
     this.drives.splice(id, 1);
     this.dataService.saveProduct('drives', this.drives);
   }
@@ -90,14 +90,14 @@ export class DrivesComponent implements AfterViewInit, OnInit {
   onSubmit(): void {
     const value = this.form.value;
     if (this.updatingId == -1)
-      this.drives.push(new Drive(value.name, value.capacity, value.cache, value.rotation_speed, value.data_transfer_rate));
+      this.drives.push(new Drive(value.name, value.capacity, value.cache, value.rotationSpeed, value.dataTransferRate));
     else
-      this.drives[this.updatingId] = new Drive(value.name, value.capacity, value.cache, value.rotation_speed, value.data_transfer_rate);
+      this.drives[this.updatingId] = new Drive(value.name, value.capacity, value.cache, value.rotationSpeed, value.dataTransferRate);
     this.clearForm();
     this.dataService.saveProduct('drives', this.drives);
   }
 
   onNameChange(): void {
-    console.log(`Drive ${this.drives[-1]} has been added.`);
+    console.log(`Drive ${this.drives[-1].name} has been added.`);
   }
 }

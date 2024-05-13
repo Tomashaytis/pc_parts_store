@@ -41,7 +41,7 @@ export class VideoCardsComponent implements AfterViewInit, OnInit {
     this.updatingId = -1;
     this.form.setValue({
       "name": '',
-      "graphic_processor": '',
+      "graphicProcessor": '',
       "frequency": '',
       "vram": '',
       "outputs": ''
@@ -49,11 +49,11 @@ export class VideoCardsComponent implements AfterViewInit, OnInit {
   }
 
   updateVideoCard(id: number): void {
-    console.log(`Video card ${this.videoCards[id]} has been updated.`);
+    console.log(`Video card ${this.videoCards[id].name} has been updated.`);
     this.updatingId = id;
     this.form.setValue({
       "name": this.videoCards[id].name,
-      "graphic_processor": this.videoCards[id].graphicProcessor,
+      "graphicProcessor": this.videoCards[id].graphicProcessor,
       "frequency": this.videoCards[id].frequency,
       "vram": this.videoCards[id].vram,
       "outputs": this.videoCards[id].outputs
@@ -62,7 +62,7 @@ export class VideoCardsComponent implements AfterViewInit, OnInit {
   }
 
   deleteVideoCard(id: number): void {
-    console.log(`Video card ${this.videoCards[id]} has been deleted.`);
+    console.log(`Video card ${this.videoCards[id].name} has been deleted.`);
     this.videoCards.splice(id, 1);
     this.dataService.saveProduct('videoCards', this.videoCards);
   }
@@ -72,7 +72,7 @@ export class VideoCardsComponent implements AfterViewInit, OnInit {
   }
 
   ngOnInit(): void {
-    this.dataService.getProduct('assets/video_cards.json', 'videoCards')
+    this.dataService.getProduct('assets/videoCards.json', 'videoCards')
     .pipe(
       filter(data => data != null),
       map((data => (data.map(videoCard => ({...videoCard})))))
@@ -90,14 +90,14 @@ export class VideoCardsComponent implements AfterViewInit, OnInit {
   onSubmit(): void {
     const value = this.form.value;
     if (this.updatingId == -1)
-      this.videoCards.push(new VideoCard(value.name, value.graphic_processor, value.frequency, value.vram, value.outputs));
+      this.videoCards.push(new VideoCard(value.name, value.graphicProcessor, value.frequency, value.vram, value.outputs));
     else
-      this.videoCards[this.updatingId] = new VideoCard(value.name, value.graphic_processor, value.frequency, value.vram, value.outputs);
+      this.videoCards[this.updatingId] = new VideoCard(value.name, value.graphicProcessor, value.frequency, value.vram, value.outputs);
     this.clearForm();
     this.dataService.saveProduct('videoCards', this.videoCards);
   }
 
   onNameChange(): void {
-    console.log(`Video card ${this.videoCards[-1]} has been added.`);
+    console.log(`Video card ${this.videoCards[-1].name} has been added.`);
   }
 }

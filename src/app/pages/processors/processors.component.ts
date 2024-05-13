@@ -44,25 +44,25 @@ export class ProcessorsComponent implements AfterViewInit, OnInit {
       "socket": '',
       "cores": '',
       "frequency": '',
-      "turbo_frequency": ''
+      "turboFrequency": ''
     });
   }
 
   updateProcessor(id: number): void {
-    console.log(`Processor ${this.processors[id]} has been updated.`);
+    console.log(`Processor ${this.processors[id].name} has been updated.`);
     this.updatingId = id;
     this.form.setValue({
       "name": this.processors[id].name,
       "socket": this.processors[id].socket,
       "cores": this.processors[id].cores,
       "frequency": this.processors[id].frequency,
-      "turbo_frequency": this.processors[id].turboFrequency
+      "turboFrequency": this.processors[id].turboFrequency
     });
     this.dataService.saveProduct('processors', this.processors);
   }
 
   deleteProcessor(id: number): void {
-    console.log(`Processor ${this.processors[id]} has been deleted.`);
+    console.log(`Processor ${this.processors[id].name} has been deleted.`);
     this.processors.splice(id, 1);
     this.dataService.saveProduct('processors', this.processors);
   }
@@ -90,14 +90,14 @@ export class ProcessorsComponent implements AfterViewInit, OnInit {
   onSubmit(): void {
     const value = this.form.value;
     if (this.updatingId == -1)
-      this.processors.push(new Processor(value.name, value.socket, value.cores, value.frequency, value.turbo_frequency));
+      this.processors.push(new Processor(value.name, value.socket, value.cores, value.frequency, value.turboFrequency));
     else
-      this.processors[this.updatingId] = new Processor(value.name, value.socket, value.cores, value.frequency, value.turbo_frequency);
+      this.processors[this.updatingId] = new Processor(value.name, value.socket, value.cores, value.frequency, value.turboFrequency);
     this.clearForm();
     this.dataService.saveProduct('processors', this.processors);
   }
 
   onNameChange(): void {
-    console.log(`Processor ${this.processors[-1]} has been added.`);
+    console.log(`Processor ${this.processors[-1].name} has been added.`);
   }
 }
