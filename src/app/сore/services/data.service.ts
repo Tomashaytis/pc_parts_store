@@ -7,7 +7,6 @@ export class DataService<T> {
     constructor(private http: HttpClient) { }
 
     getProduct(dataPath: string, dataName: string): Observable<Array<T>> {
-        localStorage.clear();
         let dataString: string | null = localStorage.getItem(dataName);
         if (dataString == null) {
             console.log('Loading data from file ', dataPath);
